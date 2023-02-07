@@ -1,0 +1,22 @@
+<div class="card">
+    <div class="card-body">
+        <h1> Create Publication Form: </h1>
+        <form [formGroup]="publicationForm" (ngSubmit)="onSubmit()">
+
+            <label for="publication-id">Id: </label>
+            <input id="publication-id" type="number" formControlName="publicationId">
+        
+            <label for="title"> Title: </label>
+            <input id="title" type="text" formControlName="title">
+
+            <label for="year">Year: </label>
+            <input id="year" type="number" formControlName="year">
+        
+            <label for="student-id">Student Id: </label>
+            <input id="student-id" type="number" formControlName="studentId">
+        
+            <button type="submit" [disabled]="!publicationForm.valid">Create Publication</button>
+        </form>
+
+    </div>
+</div>

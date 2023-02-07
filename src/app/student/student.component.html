@@ -1,0 +1,51 @@
+<h1>Student Page:</h1>
+
+<div *ngFor="let student of StudentList"> 
+    <div class="card">
+        <div class="card-body">
+            <div><b>Student Id:</b>{{student.id}}. </div>
+            <div><b>Email:</b> {{student.email}}</div>
+            <div><b>First Name:</b> {{student.firstName}}</div>
+            <div><b>Last Name:</b> {{student.lastName}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h1> Create Student Form: </h1>
+        <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+
+            <label for="id">Id: </label>
+            <input id="id" type="number" formControlName="id">
+        
+            <label for="email"> email: </label>
+            <input id="name" type="email" formControlName="email">
+
+            <label for="first-name">First Name: </label>
+            <input id="first-name" type="text" formControlName="firstName">
+        
+            <label for="last-name">Last Name: </label>
+            <input id="last-name" type="text" formControlName="lastName">
+        
+            <button type="submit" [disabled]="!studentForm.valid">Create Student</button>
+        </form>
+
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h1>Delete Student: </h1>
+        <form [formGroup]="deleteStudentForm" (ngSubmit)="deleteStudent()">
+
+            <label for="id">Id: </label>
+            <input id="id" type="number" formControlName="id">
+          
+            <button type="submit" [disabled]="!deleteStudentForm.valid">Delete Student</button>
+        </form>
+    </div>
+</div>
+
+
+
